@@ -12,35 +12,43 @@
     <header>
         <h1 id="tituloPrincipal">Uma Surpresa para Você</h1>
     </header>
-
     <main>
         <section class="content-section fade-in-element">
+            <h2>Nossa Canção</h2>
+        
+            <audio id="musicaFundo" loop>
+                <source src="aud/musica.mp3" type="audio/mpeg">
+                Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <div class="music-player">
+                <div class="album-art">
+                    <img src="image/jorge-mateus-duas-metades.jpg" alt="Capa da música">
+                </div>
+                <div class="song-info">
+                    <div class="song-title">Duas Metades</div>
+                    <div class="song-artist">Jorge & Mateus</div>
+                </div>
+                <div class="controls">
+                    <div id="playMusicaBtn" class="play-button">
+                        <div class="play-icon"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section fade-in-element">
             <h2>Nossos Momentos</h2>
-            <div class="gallery">
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img2.gif" alt="Descrição da imagem 2 - aquela viagem inesquecível" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img4.webp" alt="Descrição da imagem 1 - um momento especial nosso" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img6.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img7.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img9.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img10.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img11.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
-                <div class="polaroid-frame scroll-fade">
-                    <img src="image/img12.jpg" alt="Descrição da imagem 3 - sorrindo juntos" class="scroll-fade">
-                </div>
+            <div class="auto-carousel-container">
+                <div class="auto-carousel-slides">
+                    <img src="image/img2.gif" alt="Lembrança 1">
+                    <img src="image/img4.webp" alt="Lembrança 2">
+                    <img src="image/img6.jpg" alt="Lembrança 3">
+                    <img src="image/img7.jpg" alt="Lembrança 4">
+                    <img src="image/img9.jpg" alt="Lembrança 5">
+                    <img src="image/img10.jpg" alt="Lembrança 6">
+                    <img src="image/img11.jpg" alt="Lembrança 7">
+                    <img src="image/img12.jpg" alt="Lembrança 8">
+                </div>  
             </div>
         </section>
         
@@ -53,16 +61,7 @@
         </section>
 
         <section class="content-section fade-in-element">
-            <audio id="musicaFundo" loop>
-                <source src="aud/musica.mp3" type="audio/mpeg">
-                Seu navegador não suporta o elemento de áudio.
-            </audio>
-            <button id="playMusicaBtn" class="botao-bonito">▶️ Tocar Nossa Canção</button>
-        </section>
-
-        <section class="content-section fade-in-element">
             <h2>Um Buquê Para Você</h2>
-            
             <div id="bouquet-container">
                 <div class="night"></div>
                 <div class="flowers">
@@ -364,11 +363,6 @@
             </div>
         </section>
     </main>
-
-    <footer>
-        <p>Feito com ❤️ para você!</p>
-    </footer>
-
     <script src="lib/anime.min.js"></script>
     <script src="script.js"></script>
 </body>

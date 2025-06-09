@@ -46,6 +46,43 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error("Anime.js (para título) NÃO carregou ou 'anime' não é uma função.");
     }
 
+    const carousel = document.querySelector('.auto-carousel-slides');
+    if (carousel) {
+        let currentIndex = 0;
+        const slides = carousel.querySelectorAll('img');
+        const totalSlides = slides.length;
+        const intervalTime = 4000; // Tempo em milissegundos para cada foto (4 segundos)
+
+        const moveToNextSlide = () => {
+            // Move para o próximo slide
+            currentIndex++;
+            
+            // Aplica o efeito de transição
+            carousel.style.transition = 'transform 0.7s ease-in-out';
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // Truque para criar um loop "infinito"
+            // Quando a última foto (que é uma cópia da primeira) for exibida,
+            // ele volta para a primeira foto real sem animação.
+            if (currentIndex === totalSlides) {
+                setTimeout(() => {
+                    carousel.style.transition = 'none'; // Remove a transição para o pulo
+                    currentIndex = 0; // Volta para o índice da primeira foto
+                    carousel.style.transform = `translateX(0)`; // Pula de volta para o início
+                }, 700); // O tempo precisa ser igual à duração da transição
+            }
+        };
+
+        // Clona o primeiro slide e o adiciona no final para o efeito de loop infinito
+        if (totalSlides > 1) {
+            const firstSlideClone = slides[0].cloneNode(true);
+            carousel.appendChild(firstSlideClone);
+
+            // Inicia o intervalo para passar os slides automaticamente
+            setInterval(moveToNextSlide, intervalTime);
+        }
+    }
+
     onload = () =>{
         document.body.classList.remove("container");
 };
